@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>Accessibility Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <style>*{
+    scroll-behavior: smooth;
+}
+  
+body {
+    background: #f5f6f7;
+    color: #1b1b32;
+    font-family: Helvetica;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: rgb(255, 252, 252);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.topic {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5vw;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px gray;
+    position: absolute;
+    bottom: 300px;
+}
+
+.slogan {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 4vw;
+    color: rgb(231, 247, 225);
+    text-shadow: 0 0 15px rgb(17, 17, 17);
+    position: absolute;
+    bottom: 240px;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+header img {
+    height: 100%;
+    width: auto;
+    filter: brightness(1.1);
+    filter: grayscale(0.5);
+}
+
+nav {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(84, 90, 47);
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #7c7c7c;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative; 
+}
+
+.topnav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0; 
+    height: 3px; 
+    background-color: rgb(182, 67, 67); 
+    transition: width 0.3s ease; 
+}
+
+.topnav a:hover::after {
+    width: 100%; 
+}
+
+.topnav a.active {
+    background-color: #7c7c7c;
+    color: rgb(0, 0, 0);
+}
+
+.topnav a.active:hover {
+    color: rgb(182, 67, 67);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@keyframes navbar {
+    from { right: -400px; }
+    to { right: 0; }
+}
+
+@media screen and (max-width: 1000px) {
+    header .topic {
+        font-size: 7vw;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+        background-color: #7c7c7c;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+        animation: navbar 1.5s;
+        margin-left: 80px;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    header .topic {
+        font-size: 12vw;
+    }
+} 
+
+h1 {
+    color: #f1be32;
+    font-size: min(5vw, 1.2em);
+    text-align: center;
+  }
+
+main {
+    padding-top: 0px;
+  }
+  
+section {
+    width: 80%;
+    margin: 0 auto 10px auto;
+    max-width: 600px;
+}
+  
+h1,h2 {
+    font-family: Verdana, Tahoma;
+}
+  
+h2 {
+    border-bottom: 4px solid #dfdfe2;
+    margin-top: 0px;
+    padding-top: 60px;
+}
+  
+.info {
+    padding: 10px 0 0 5px;
+}
+  
+.formrow {
+    margin-top: 30px;
+    padding: 0px 15px;
+}
+  
+input {
+    font-size: 1rem;
+}
+  
+.info label, .info input {
+    display: inline-block;
+}
+  
+.info input {
+    width: 50%;
+    text-align: left;
+}
+  
+.info label {
+    width: 10%;
+    min-width: 55px;
+    text-align: right;
+}
+  
+.question-block {
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 5px;
+}
+  
+h3 {
+    margin-top: 5px;
+    padding-left: 15px;
+    font-size: 1.375rem;
+}
+  
+h3::before {
+    content: "Question #";
+}
+  
+.question {
+    border: none;
+    padding-bottom: 0;
+}
+  
+.answers-list {
+    list-style: none;
+    padding: 0;
+}
+  
+button {
+    display: block;
+    margin: 40px auto;
+    width: 40%;
+    padding: 15px;
+    font-size: 1.438rem;
+    background: #d0d0d5;
+    border: 3px solid #3b3b4f;
+}
+  
+footer {
+    background-color: #2a2a40;
+    display: flex;
+    justify-content: center;
+}
+  
+footer,footer a {
+    color: #dfdfe2;
+}
+  
+address {
+    text-align: center;
+    padding: 0.3em;
+}
+  
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+  </style>
+  <body>
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <a href="index.html" class="active"></i>Home</a>
+            <a href="HomeQuiz.html">Quiz</a>
+            <a href="index.html">บทความ</a>
+            <a href="About.html">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
+            <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <form method="post" action="index.html">
+            <section role="region" aria-labelledby="student-info">
+                <h2 id="student-info">Student Info</h2>
+                <div class="info">
+                    <label for="student-name">Name:</label>
+                    <input type="text" name="student-name" id="student-name" />
+                </div>
+                <div class="info">
+                    <label for="student-email">Email:</label>
+                    <input type="email" name="student-email" id="student-email" />
+                </div>
+                <div class="info">
+                    <label for="birth-date">Date of Birth:</label>
+                    <input type="date" name="birth-date" id="birth-date" />
+                </div>
+            </section>
+            
+            <section role="region" aria-labelledby="bangrachan-questions">
+                <h2 id="bangrachan-questions">ศึกบางระจัน</h2>
+                
+                <div class="question-block">
+                    <h3>1</h3>
+                    <fieldset class="question" name="bangrachan-question-one">
+                        <legend>ศึกบางระจันเกิดขึ้นในปีใด?</legend>
+                        <label><input type="radio" name="q1" value="2308"> พ.ศ. 2308</label>
+                        <label><input type="radio" name="q1" value="2310"> พ.ศ. 2310</label>
+                        <label><input type="radio" name="q1" value="2325"> พ.ศ. 2325</label>
+                    </fieldset>
+                </div>
+                
+                <div class="question-block">
+                    <h3> 2</h3>
+                    <fieldset class="question" name="bangrachan-question-two">
+                        <legend>ใครเป็นผู้นำของชาวบ้านบางระจัน?</legend>
+                        <label><input type="radio" name="q2" value="nainoi"> นายทองเหม็น</label>
+                        <label><input type="radio" name="q2" value="naiin"> นายอิน</label>
+                        <label><input type="radio" name="q2" value="naiwan"> นายพันเรือง</label>
+                    </fieldset>
+                </div>
+                
+                <div class="question-block">
+                    <h3>3</h3>
+                    <fieldset class="question" name="bangrachan-question-three">
+                        <legend>ชาวบ้านบางระจันสามารถต้านทานกองทัพพม่าได้นานกี่เดือน?</legend>
+                        <label><input type="radio" name="q3" value="3"> 3 เดือน</label>
+                        <label><input type="radio" name="q3" value="5"> 5 เดือน</label>
+                        <label><input type="radio" name="q3" value="8"> 8 เดือน</label>
+                    </fieldset>
+                </div>
+                
+                <div class="question-block">
+                    <h3>4</h3>
+                    <fieldset class="question" name="bangrachan-question-four">
+                        <legend>เหตุใดชาวบ้านบางระจันจึงพ่ายแพ้?</legend>
+                        <label><input type="radio" name="q4" value="weapon"> อาวุธและกำลังพลไม่เพียงพอ</label>
+                        <label><input type="radio" name="q4" value="disease"> โรคระบาด</label>
+                        <label><input type="radio" name="q4" value="betrayal"> ถูกทรยศจากคนภายใน</label>
+                    </fieldset>
+                </div>
+                
+                <div class="question-block">
+                    <h3>5</h3>
+                    <fieldset class="question" name="bangrachan-question-five">
+                        <legend>การเสียสละของชาวบ้านบางระจันมีผลต่อประวัติศาสตร์ไทยอย่างไร?</legend>
+                        <textarea name="q5" rows="4" cols="50" placeholder="กรุณาเขียนคำตอบของคุณที่นี่..."></textarea>
+                    </fieldset>
+                </div>
+            </section>
+            
+            <button type="submit">Send</button>
+        </form>
+    </main>
+  </body>
+</html>
+<script>
+    function navResponsive() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+
+}
+</script>
